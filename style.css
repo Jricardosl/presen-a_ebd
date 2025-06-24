@@ -1,19 +1,20 @@
 /* Corpo da página: remove margens, altura total da viewport, fundo com gradiente diagonal, fonte, centraliza conteúdo */
 body {
   margin: 0;
-  height: 100vh; /* altura da janela inteira */
-  background: linear-gradient(135deg, #005f73, #0a9396); /* gradiente do canto superior esquerdo para o inferior direito */
-  font-family: 'Poppins', sans-serif; /* fonte moderna e limpa */
-  display: flex; /* layout flexível para centralizar */
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center; /* centraliza verticalmente */
-  color: #edf6f9; /* cor clara do texto */
-  text-align: center; /* texto centralizado */
-}
+  min-height: 100vh; /* altura mínima da tela */
+  background: linear-gradient(135deg, #005f73, #0a9396);
+  font-family: 'Poppins', sans-serif;
+  color: #edf6f9;
+  text-align: center;
 
+  display: flex;
+  justify-content: center;
+  padding-top: 30px; /* espaço superior */
+  padding-bottom: 30px; /* espaço inferior opcional */
+}
 /* Título principal (h1): tamanho grande, sombra para destaque, espaçamento entre letras */
 h1 {
-  font-size: 2.8rem; /* tamanho grande */
+  font-size: 2.2rem; /* tamanho grande */
   text-shadow: 3px 3px 8px rgba(0,0,0,0.7); /* sombra preta com transparência para destacar */
   margin-bottom: 0.3rem; /* espaçamento embaixo pequeno */
   letter-spacing: 2px; /* espaço entre letras para dar estilo */
@@ -103,4 +104,42 @@ button:active {
   min-height: 1.3em; /* mantém espaço reservado mesmo sem texto */
   letter-spacing: 0.02em;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Agrupamento da logo com os títulos */
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagem da logomarca centralizada acima dos títulos */
+/*.logo-central {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}*/
+.logo-central {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  filter: brightness(0.2) contrast(1.5); /* <- escurece e melhora contraste */
+}
+
+.logo-central:hover {
+  transform: scale(1.05);
+}
+
+/* Garante que o conteúdo fique em coluna */
+body > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

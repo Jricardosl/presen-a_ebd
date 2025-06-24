@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <title>Presença EBD - Igreja do Nazareno</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="icon-192.png" />
+  <meta name="theme-color" content="#0a9396" />
 </head>
 <body>
   <div>
-    <h1>Escola Bíblica Dominical</h1>
-    <h2>Igreja do Nazareno – Pau Amarelo</h2>
+    <div class="cabecalho"> <!-- Nova div para agrupar logo + títulos -->
+      <img src="imagens/Nazareno.png" alt="Logo da Igreja do Nazareno" class="logo-central" />
+      <h1>Escola Bíblica Dominical</h1>
+      <h2>Igreja do Nazareno – Pau Amarelo</h2>
+    </div>
 
     <form id="presencaForm">
       <label for="nome">Nome:</label>
@@ -34,5 +40,14 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("Service Worker registrado com sucesso!"))
+        .catch(error => console.log("Falha ao registrar Service Worker:", error));
+    });
+  }
+  </script>
 </body>
 </html>
