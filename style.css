@@ -1,0 +1,106 @@
+/* Corpo da página: remove margens, altura total da viewport, fundo com gradiente diagonal, fonte, centraliza conteúdo */
+body {
+  margin: 0;
+  height: 100vh; /* altura da janela inteira */
+  background: linear-gradient(135deg, #005f73, #0a9396); /* gradiente do canto superior esquerdo para o inferior direito */
+  font-family: 'Poppins', sans-serif; /* fonte moderna e limpa */
+  display: flex; /* layout flexível para centralizar */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+  color: #edf6f9; /* cor clara do texto */
+  text-align: center; /* texto centralizado */
+}
+
+/* Título principal (h1): tamanho grande, sombra para destaque, espaçamento entre letras */
+h1 {
+  font-size: 2.8rem; /* tamanho grande */
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.7); /* sombra preta com transparência para destacar */
+  margin-bottom: 0.3rem; /* espaçamento embaixo pequeno */
+  letter-spacing: 2px; /* espaço entre letras para dar estilo */
+}
+
+/* Subtítulo (h2): tamanho menor, itálico, sombra para destaque */
+h2 {
+  font-size: 1.3rem; /* menor que o h1 */
+  font-style: italic; /* texto em itálico */
+  margin-top: 0; /* sem margem acima */
+  margin-bottom: 1.8rem; /* espaçamento abaixo maior */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* sombra mais leve que h1 */
+}
+
+/* Formulário: fundo semi-transparente, espaçamento interno, bordas arredondadas, sombra, largura limitada e filtro para desfocar fundo atrás */
+form {
+  background: rgba(255,255,255,0.15); /* branco transparente para efeito vidro */
+  padding: 30px 40px; /* espaço interno vertical e horizontal */
+  border-radius: 15px; /* cantos arredondados */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* sombra ao redor para profundidade */
+  width: 100%; /* ocupa toda largura disponível do container */
+  max-width: 380px; /* limite máximo de largura para não ficar muito largo */
+  backdrop-filter: blur(10px); /* desfoque do conteúdo atrás do form (efeito vidro) */
+}
+
+/* Labels: bloco (cada label fica em linha nova), margens para espaçamento, fonte em negrito e tamanho médio, espaçamento entre letras, alinhamento à esquerda e sombra para contraste */
+label {
+  display: block; /* ocupa linha inteira */
+  margin: 15px 0 5px; /* espaçamento: 15px cima, 0 lateral, 5px baixo */
+  font-weight: 600; /* semi-negrito */
+  font-size: 1rem; /* tamanho padrão */
+  letter-spacing: 0.02em; /* leve espaçamento entre letras */
+  text-align: left; /* alinhado à esquerda */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* sombra escura para legibilidade */
+}
+
+/* Inputs do tipo texto e selects: largura total, padding interno confortável, sem borda, cantos arredondados, sombra interna, fonte legível, sem outline padrão, efeito de transição */
+input[type="text"], select {
+  width: 100%; /* ocupa toda largura do form */
+  padding: 14px 1px; /* espaço interno vertical e horizontal */
+  border: none; /* sem borda */
+  border-radius: 8px; /* cantos arredondados */
+  font-size: 1rem; /* tamanho da fonte */
+  outline: none; /* remove contorno azul padrão do foco */
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.2); /* sombra interna leve para profundidade */
+  transition: box-shadow 0.3s ease; /* animação suave ao mudar a sombra */
+}
+
+/* Efeito visual quando o input/select está focado: sombra interna mais forte para indicar foco */
+input[type="text"]:focus, select:focus {
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Botão: espaçamento acima, largura total, padding confortável, fonte grande e em negrito, cor do texto clara, fundo verde claro, borda arredondada, cursor pointer e efeitos de transição para hover e clique */
+button {
+  margin-top: 20px; /* espaçamento acima do botão */
+  width: 100%; /* ocupa toda largura do form */
+  padding: 13px; /* espaçamento interno */
+  font-size: 1.1rem; /* tamanho da fonte */
+  font-weight: bold; /* negrito */
+  color: #edf6f9; /* cor clara do texto */
+  background: #94d2bd; /* tom verde-água */
+  border: none; /* sem borda */
+  border-radius: 8px; /* cantos arredondados */
+  cursor: pointer; /* cursor mãozinha ao passar o mouse */
+  transition: background 0.3s ease, transform 0.1s ease; /* transições suaves de cor e posição */
+  letter-spacing: 1px; /* espaçamento entre letras */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* sombra para dar destaque */
+}
+
+/* Efeito ao passar o mouse: muda o fundo para amarelo vibrante e levanta o botão */
+button:hover {
+  background: #ee9b00; /* amarelo vibrante */
+  transform: translateY(-2px); /* sobe 2px */
+}
+
+/* Efeito ao clicar: botão volta à posição normal */
+button:active {
+  transform: translateY(0);
+}
+
+/* Mensagem de resposta: espaçamento acima, fonte grande e negrito, altura mínima para evitar salto de layout, espaçamento leve entre letras e sombra para melhorar contraste */
+#resposta {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  min-height: 1.3em; /* mantém espaço reservado mesmo sem texto */
+  letter-spacing: 0.02em;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
