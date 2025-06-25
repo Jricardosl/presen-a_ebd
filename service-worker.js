@@ -1,23 +1,19 @@
 
-self.addEventListener("install", function(e) {
-  e.waitUntil(
-    caches.open("frequencia-ebd").then(function(cache) {
-      return cache.addAll([
-        "./",
-        "./index.html",
-        "./style.css",
-        "./script.js",
-        "./icon-192-EBD.png",
-        "./icon-512-EBD.png"
-      ]);
-    })
-  );
+self.addEventListener("install", function (event) {
+  console.log("✅ Service Worker instalado.");
+  self.skipWaiting();
 });
 
-self.addEventListener("fetch", function(e) {
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
+self.addEventListener("activate", function (event) {
+  console.log("✅ Service Worker ativado.");
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(cacheNames.map(cache => caches.delete(cache)));
     })
   );
+  return self.clients.claim();
+});
+
+self.addEventListener("fetch", function (event) {
+  event.respondWith(fetch(event.request));
 });
