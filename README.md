@@ -59,6 +59,24 @@ O projeto utiliza:
 - `service-worker.js` para funcionamento offline
 - Ícones personalizados com as letras **EDB**
 
+📊 Integração com Google Sheets
+Todos os registros são enviados para uma aba chamada Geral em uma planilha do Google Sheets conectada via SheetDB.io.
+
+As presenças são separadas automaticamente por sala (Adulto, Jovens, Adolescentes, etc.) usando a função FILTER do Google Sheets:
+
+Excel
+=FILTER(Geral!A:E; Geral!B:B = "Jovens")
+
+Cada aba da planilha representa uma sala específica e é alimentada com os dados da aba "Geral", evitando múltiplas conexões externas e facilitando a organização dos dados.
+
+☁️ Exemplo de separação automática por sala
+
+| Nome        | Sala   | Token | Data       | Hora     |
+| ----------- | ------ | ----- | ---------- | -------- |
+| Maria Souza | Jovens | 3236  | 23/06/2025 | 09:01:02 |
+| João Santos | Adulto | 3236  | 23/06/2025 | 09:05:33 |
+
+Esses dados são enviados para a aba "Geral" e automaticamente filtrados para as demais abas conforme a sala informada.
 ---
 
 ## 🙏 Feito com propósito
