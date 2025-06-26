@@ -1,13 +1,7 @@
 
 const tokenCorreto = "3236";
 
-const urls = {
-  "Adulto": "https://sheetdb.io/api/v1/1xync6z0w3igs",
-  "Jovens": "https://sheetdb.io/api/v1/1xync6z0w3igs",
-  "Adolescentes": "https://sheetdb.io/api/v1/1xync6z0w3igs",
-  "TerceiraIdade": "https://sheetdb.io/api/v1/1xync6z0w3igs",
-  "Discipulado": "https://sheetdb.io/api/v1/1xync6z0w3igs"
-};
+const urlGeral = "https://sheetdb.io/api/v1/1xync6z0w3igs";
 
 const form = document.getElementById("presencaForm");
 const resposta = document.getElementById("resposta");
@@ -76,7 +70,7 @@ form.addEventListener("submit", async (e) => {
 
 async function enviarPresenca(dados) {
   try {
-    const url = urls[dados.sala];
+    const url = urlGeral;
     if (!url) {
       console.error("❌ Sala não encontrada:", dados.sala);
       return false;
